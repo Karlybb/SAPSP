@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100;200;300;400;600;800&family=Nunito+Sans:wght@300;400;600;900&family=Work+Sans:wght@400;600;700&display=swap');
+
+* {
+    font-family: 'Albert Sans', sans-serif;
+    font-style: normal;
+}
+
+:root {
+    /** ++++++++++++++++++++++++++++++++++++ Fondos ++++++++++++++++++++++++++++++++++++  */
+    --bg-fondo: #164B60;
+    --bg-fondo-op: #2D4356;
+    --main-body: #fdfcf7;
+    --warning-bg: #ffc045;
+    --success-bg: #00bd62;
+    --info-bg: #3675e7;
+    --danger-bg: #F13535;
+    /*! ++++++++++++++++++++++++++++++++++++ Textos ++++++++++++++++++++++++++++++++++++  */
+    --txt-gray: #646464;
+    --txt-gray-l: #929292;
+    --txt-red: #FF4118;
+}
+
+body {
+    background-color: var(--main-body) !important;
+    margin: 0;
+    padding: 0px 0px 60px 0px;
+    position: relative;
+    min-height: 100vh;
+}
+
+.navbar {
+    margin-bottom: 0 !important;
+    background-color: #F1F0E8;
+    color: wheat !important;
+}
+
+/* ============================= Textos ===============================*/
+
+.subtitle {
+    color: var(--txt-gray);
+    font-weight: 500;
+}
+
+.txt-gray {
+    color: var(--txt-gray);
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin: 5px;
+}
+
+.txt-red {
+    color: var(--txt-red);
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.txt-warning{
+    color: var(--warning-bg);
+}
+
+.txt-danger{
+    color: var(--txt-red);
+}
+
+/*# ++++++++++++++++++++++++++++++++++++ Card - Notify ++++++++++++++++++++++++++++++++++++  */
+
+.notify {
+    overflow: hidden;
+    padding: 10px 15px;
+    border-radius: 15px !important;
+    margin: 15px;
+}
+
+.notify-success {
+    border-left: 4px solid var(--success-bg) !important;
+}
+
+.notify-warning {
+    border-left: 4px solid var(--warning-bg) !important;
+}
+
+.notify-info {
+    border-left: 4px solid var(--info-bg) !important;
+}
+
+.notify-danger {
+    border-left: 4px solid var(--danger-bg) !important;
+}
+
+.notify img {
+    padding-right: 10px;
+}
+
+.txt-notify {
+    color: var(--txt-gray);
+    font-size: 2.5rem;
+}
+
+.txt-notify-s {
+    color: var(--txt-gray-l);
+    font-size: 1.6rem;
+}
+
+/*! ++++++++++++++++++++++++++++++++++++ Buttons ++++++++++++++++++++++++++++++++++++  */
+
+.btn-info {
+    background-color: var(--bg-fondo) !important;
+    border: var(--bg-fondo-op) !important;
+}
+
+.btn-blue{
+    background-color: var(--info-bg) !important;
+    color: white !important;
+}
+
+.btn-blue:hover{
+    color: #2D4356 !important;
+}
+
+.btn-secondary:hover{
+    color: white !important;
+}
+
+/*% ++++++++++++++++++++++++++++++++++++ Tablas ++++++++++++++++++++++++++++++++++++  */
+
+#trencabezado {
+    background-color: transparent;
+}
+
+#tablarojo {
+    border-left: 12px solid var(--danger-bg);
+}
+
+#tablaamarillo {
+    border-left: 12px solid var(--warning-bg);
+}
+
+#tablaverde {
+    border-left: 12px solid var(--success-bg);
+}
+
+#tablaazul {
+    border-left: 12px solid var(--info-bg);
+}
+
+#tablagris {
+    border-left: 12px solid var(--txt-gray);
+}
+
+#tablaneutro {
+    border-left: 12px solid var(--txt-gray);
+}
+
+/* ============================== Resaltadores ===============================*/
+
+.resaltardatos {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid hsla(197, 63%, 23%, 0.664);
+    -webkit-box-shadow: 3px 13px 82px -25px rgba(112, 108, 112, 1);
+    -moz-box-shadow: 3px 13px 82px -25px rgba(112, 108, 112, 1);
+    box-shadow: 3px 13px 82px -25px rgba(112, 108, 112, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+#resaltar-texto {
+    background: #f4e2d3;
+    border-radius: 14px;
+    border: 3px solid #ffffff;
+    padding: 7px 10px;
+}
+
+/* ============================== Banners ===============================*/
+
+.bg-banner {
+    background-color: var(--bg-fondo);
+    color: #FFF6E0;
+    padding: 15px 15px;
+}
+
+.contenedor {
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    min-height: 85vh;
+}
+
+.formm {
+    padding-top: 30px;
+    /*margin: 1px auto;*/
+    margin: auto;
+    width: 85%;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.botonera {
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ============================== Footer ===============================*/
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.tablagris {
+    border-left: 12px solid #9E9FA5 !important;
+}
+
+table.dataTable {
+    border-collapse: collapse !important;
+}
+
+

@@ -1808,7 +1808,7 @@
                 <span class="glyphicon glyphicon-tasks txt-gray"></span>
                 <label for="sel1" class="form-label txt-gray">Direcciones de los Delegado Administrativo:</label>
                 <select name="enlace" class="form-control" id="sel1" required>
-                    <optgroup label="Enlace Actual: {{$datos4->nombre1}} {{$datos4->nombre2}} {{$datos4->apellidopat}} {{$datos4->apellidomat}}">
+                    <optgroup label="Delegado Administrativo Actual: {{$datos4->nombre1}} {{$datos4->nombre2}} {{$datos4->apellidopat}} {{$datos4->apellidomat}}">
                         <!--<option disabled><b></b></option>-->
                         <option value="{{$datos4->idcredencial}}" selected readonly>Correo: {{$datos4->correo}}</option>
                         <option disabled>Cargo: {{$datos4->cargo}}</option>
@@ -1836,7 +1836,7 @@
         <div id="separacion">
             <div class="col-12" align="center">
                 @if( $correcciones > 0 )
-                <p><b>*Nota:</b> Una vez confirmando los cambios, la c&eacute;dula se enviará autom&aacute;ticamente al enlace correspondiente.</p>
+                <p><b>*Nota:</b> Una vez confirmando los cambios, la c&eacute;dula se enviará autom&aacute;ticamente al delegado correspondiente.</p>
                 <button class="btn btn-success" type="submit">CONFIRMAR CAMBIOS</button>
                 <a href="{{route('correcciones')}}" type="button" class="btn btn-secondary" id="tamanioboton">REGRESAR</a>
                 @else

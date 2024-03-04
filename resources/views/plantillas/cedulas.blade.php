@@ -728,16 +728,16 @@
                 <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
 
                 <div class="col-md-12">
-                    <h3 class="subtitle mt-5 text-center">Datos del Enlace</h3>
+                    <h3 class="subtitle mt-5 text-center">Datos del Delegado Administrativo</h3>
                     <hr>
                 </div>
 
 
                 <div class="col-md-12 mb-5" id="separacionbottom">
                     <span class="glyphicon glyphicon-tasks txt-gray"></span>
-                    <label for="sel1" class="txt-gray">Direcciones de los enlaces:</label>
+                    <label for="sel1" class="txt-gray">Direcciones de los Delegado Administrativo:</label>
                     <select name="enlace" class="form-control" id="sel1" required>
-                        <option value=""><b>Selecciona un enlace...</b></option>
+                        <option value=""><b>Selecciona un Delegado Administrativo...</b></option>
                         @foreach( $datos3 as $ob3 )
                         <optgroup label="{{$ob3->nombre1}} {{$ob3->nombre2}} {{$ob3->apellidopat}} {{$ob3->apellidomat}}">
                             <option value="{{$ob3->idcredencial}}">Correo: {{$ob3->correo}}</option>
@@ -1800,13 +1800,13 @@
             @if( $correcciones == 0 )
 
             <div class="col-md-12">
-                <h3 class="subtitle mt-5 text-center">Datos del Enlace</h3>
+                <h3 class="subtitle mt-5 text-center">Datos del Delegado Administrativo</h3>
                 <hr>
             </div>
 
             <div class="col-md-4" id="separacionbottom">
                 <span class="glyphicon glyphicon-tasks txt-gray"></span>
-                <label for="sel1" class="form-label txt-gray">Direcciones de los enlaces:</label>
+                <label for="sel1" class="form-label txt-gray">Direcciones de los Delegado Administrativo:</label>
                 <select name="enlace" class="form-control" id="sel1" required>
                     <optgroup label="Enlace Actual: {{$datos4->nombre1}} {{$datos4->nombre2}} {{$datos4->apellidopat}} {{$datos4->apellidomat}}">
                         <!--<option disabled><b></b></option>-->

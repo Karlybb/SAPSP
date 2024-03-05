@@ -137,28 +137,42 @@
              document.getElementById("busqueda4").value = "";
     
         }
+
+        function limpiar3() {
+            document.getElementById("limpiartexto1").value = "";
+            document.getElementById("limpiartexto2").value = "";
+            document.getElementById("limpiartexto3").value = "";
+            document.getElementById("limpiartexto4").value = "";
+            document.getElementById("limpiartexto5").value = "";
+            
+            document.getElementById("limpiartexto7").value = "";
+            document.getElementById("limpiartexto8").value = "";
+            document.getElementById("limpiartexto9").value = "";
+            document.getElementById("limpiartexto10").value = "";
+            
+        }
+
+        function ShowSelected()
+                {
+                
+                var combo = document.getElementById("sel1");
+                var selected = combo.options[combo.selectedIndex].text;              
+                  if (combo.options[combo.selectedIndex].text =='ACTUALIZACIÓN'){
+                        limpiar3();
+                    }
+                  if(combo.options[combo.selectedIndex].text =='CORRECCIÓN'){
+                      
+                        location.reload();          
+                       
+                    }
+
+                }
+
     </script>
 
 
-<script>
-    const togglePassword = document
-        .querySelector('#togglePassword');
-
-    const password = document.querySelector('#pwd');
-
-    togglePassword.addEventListener('click', () => {
-
-        
-        const type = password
-            .getAttribute('type') === 'password' ?
-            'text' : 'password';
-              
-        password.setAttribute('type', type);
-
-        this.classList.toggle('bi-eye');
-    });
-</script>   
-    </script>
+  
+    
 
     
 

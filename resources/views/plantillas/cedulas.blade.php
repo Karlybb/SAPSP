@@ -407,17 +407,31 @@
                 <hr>
             </div>
 
-            <div class="col-md-12 mb-3">
+          <!--  <div class="col-md-12 mb-3">
                 <span class="glyphicon glyphicon-tasks txt-gray"></span>
                 <label for="sel1" class="txt-gray">Motivo del cambio:</label>
-                <select name="radio" class="form-control" id="sel1" required>
+                <select name="radio" class="form-control" id="sel1" >
                     <option value=""><b>Selecciona el Motivo del Cambio.</b></option>
                     <optgroup label="Motivos:">
                         <option value="ACTUALIZACIÓN">ACTUALIZACIÓN</option>
                         <option value="CORRECCIÓN">CORRECCIÓN</option>
                     </optgroup>
                 </select>
-            </div>
+            </div>-->
+
+           
+                <div class="col-md-12 mb-3">
+                <span class="glyphicon glyphicon-tasks txt-gray"></span>
+                <label for="sel1" class="txt-gray">Motivo del cambio:</label>
+                <select name="radio" class="form-control" id="sel1" onchange="ShowSelected();">   
+                    <optgroup label="Motivos:">
+                     <option value="" ><b>Selecciona el Motivo del Cambio.</b></option> 
+                     <option value="CORRECCIÓN">CORRECCIÓN</option>
+                        <option value="ACTUALIZACIÓN">ACTUALIZACIÓN</option>
+                     </optgroup>
+                </select>
+                </div>
+            
 
             <!-- + + + + + + + + + + + + + + + + + Debe decir  + + + + + + + + + + + + + + + + + -->
 
@@ -427,7 +441,7 @@
                     <hr>
                 </div>
 
-                <div class="btn-limpiar m-4">
+            <!--    <div class="btn-limpiar m-4">
                     <div class="col-12">
                         <button class="btn btn-primary" onclick="limpiar()">
                             <span class="glyphicon glyphicon-repeat p-2"></span>
@@ -435,7 +449,7 @@
                         </button>
                     </div>
                 </div>
-
+            -->
 
                 <div class="col-md-3 my-3">
                     <span class="glyphicon glyphicon-user txt-gray"></span>
@@ -481,10 +495,10 @@
                             <option value="{{$datos->situacion}}"><b>{{$datos->situacion}}</b></option>
                             @if( $datos->situacion == 'ENCARGADO' )
                             <option value="TITULAR">TITULAR</option>
-                            <option value="SUPLENTE">SUPLENTE</option> <!--- VERIFICAR-->
+                            <option value="SUPLENTE">SUPLENTE</option> 
                             @elseif( $datos->situacion == 'TITULAR')
                             <option value="ENCARGADO">ENCARGADO</option>
-                            <option value="SUPLENTE">SUPLENTE</option> <!--- VERIFICAR-->
+                            <option value="SUPLENTE">SUPLENTE</option> 
                         </optgroup>
                         
                         

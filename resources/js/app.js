@@ -1,6 +1,5 @@
 //require('./bootstrap');
 
-console.log('Hola mundo');
 $(document).ready(function () {
     $('.ejemplo-1').select2();
 });

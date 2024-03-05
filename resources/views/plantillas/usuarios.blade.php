@@ -462,6 +462,7 @@
 
                     <td>{{$ob->tipo}}</td>
                     <td><b>{{$ob->rol}}</b></td>
+                  
 
                     <td>
                         <div id="separacion" class="d-flex">
@@ -527,7 +528,8 @@
                     </td>
 
                     <td>{{$ob->tipo}}</td>
-                    <td><b>{{$ob->rol}}</b></td>
+                    <!--  <td><b>{{$ob->rol}}</b></td> -->
+                    <td><b>Usuario Habilitado</b></td>
 
                     <td>
                         <div id="separacion" class="d-flex">
@@ -588,7 +590,8 @@
                     </td>
 
                     <td>{{$ob->tipo}}</td>
-                    <td><b>{{$ob->rol}}</b></td>
+                    <!--  <td><b>{{$ob->rol}}</b></td> -->
+                    <td><b>Delegado Administrativo</b></td>
 
                     <td>
                         <div id="separacion" class="d-flex">

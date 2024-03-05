@@ -72,7 +72,7 @@ class Cedulas_Controller extends Controller{
             $ua = array();
             $query = "";
             
-            // Buscar Servidor Público - Delegado
+            // Buscar Servidor Público - Delegado ---> usuario habilitado
             if( $rol == 1 ){
 
                 $cveua = \DB::select("select * from R_All_CUNADM where iduniadmin = $idcveua");
@@ -87,8 +87,10 @@ class Cedulas_Controller extends Controller{
                     $query = $query." and adm.iduniadmin = $request->ua ";
                 }else{
                     // Retornar solo los de su estructura
-                    $likecveua = substr($cveua[0]->cveua_padre,0,7);
-                    $query = $query." and adm.cveua_padre like '$likecveua%' ";
+                   // $likecveua = substr($cveua[0]->cveua_padre,0,7);
+                    //$query = $query." and adm.cveua_padre like '$likecveua%' "; ANTERIORES
+                    $likecveua = substr($cveua[0]->cveua_padre,0,8);
+                    $query = $query." and adm.cveua like '$likecveua%' ";
                 }
             
             // Buscar Servidor Público - RDSP ó Admin
@@ -116,6 +118,15 @@ class Cedulas_Controller extends Controller{
                                         inner join c_un_adm adm on adm.iduniadmin = ua.iduniadmin
                                         where (ua.estado = 'ACTIVO' ".$query.")
                                         order by p.nombre1, p.nombre2, p.apellidopat, p.apellidomat asc");
+
+             echo ("select p.idpersona, p.nombre1, p.nombre2, p.apellidopat, p.apellidomat,
+             ua.cargo, ua.tipo, ua.profesion,
+             adm.nombre as dependencia, adm.cveua
+             from c_persona p
+             inner join c_personalua ua on ua.idpersona = p.idpersona
+             inner join c_un_adm adm on adm.iduniadmin = ua.iduniadmin
+             where (ua.estado = 'ACTIVO' ".$query.")
+             order by p.nombre1, p.nombre2, p.apellidopat, p.apellidomat asc");                        
             
             if( $infodiv != null ){
                 return view('plantillas/cedulas')
@@ -154,9 +165,12 @@ class Cedulas_Controller extends Controller{
     public function Cargar_Datos(Request $request){
 
         $token = $request->session()->token();
+        
         $token = csrf_token();
         
         $id=session('sid');
+        $iduad=session('sid_uniadmin');
+        
 		
         if($id!=null){
             $titulo = "CREAR CÉDULA";
@@ -167,10 +181,17 @@ class Cedulas_Controller extends Controller{
 
             $resultado2 = \DB::select("select * from c_municipios order by nombre_municipio asc");
 
-            $resultado3 = \DB::select("select * from R_CC_Credenciales");
+            $resultado3 = \DB::select("select * from R_CC_Credenciales where iduniadmin = '$iduad'");
+
+           // $resultado3 = \DB::select("select * from R_CC_Credenciales");
+
+            //iduniadmin
 
             $list = explode("/",$resultado[0]->infodiv);
             array_push($list,"","","","","");
+            
+
+            
             
             return view('plantillas/cedulas')
                 ->with('titulo', $titulo)

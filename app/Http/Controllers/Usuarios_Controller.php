@@ -165,6 +165,7 @@ class Usuarios_Controller extends Controller{
             $comb = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             $shfl = str_shuffle($comb);
             $pwd = substr($shfl,0,9);
+            $DAdm=\DB::select("select * from R_CC_CREDENCIALES Where iduniadmin is NOT NULL");
 
             return view('plantillas/usuarios')
                 ->with('titulo', $titulo)
@@ -174,7 +175,9 @@ class Usuarios_Controller extends Controller{
                 ->with('personalua',$personalua)
                 ->with('ua',$ua)
                 ->with('datos2',$resultado2)
-                ->with('pwd',$pwd);
+                ->with('pwd',$pwd)
+                ->with('DAdm',$DAdm);
+
 
         }else{
             return Redirect::to('login');

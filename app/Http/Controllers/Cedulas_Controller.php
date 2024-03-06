@@ -119,14 +119,7 @@ class Cedulas_Controller extends Controller{
                                         where (ua.estado = 'ACTIVO' ".$query.")
                                         order by p.nombre1, p.nombre2, p.apellidopat, p.apellidomat asc");
 
-             echo ("select p.idpersona, p.nombre1, p.nombre2, p.apellidopat, p.apellidomat,
-             ua.cargo, ua.tipo, ua.profesion,
-             adm.nombre as dependencia, adm.cveua
-             from c_persona p
-             inner join c_personalua ua on ua.idpersona = p.idpersona
-             inner join c_un_adm adm on adm.iduniadmin = ua.iduniadmin
-             where (ua.estado = 'ACTIVO' ".$query.")
-             order by p.nombre1, p.nombre2, p.apellidopat, p.apellidomat asc");                        
+                               
             
             if( $infodiv != null ){
                 return view('plantillas/cedulas')

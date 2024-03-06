@@ -268,32 +268,26 @@
             <span class="glyphicon glyphicon-lock txt-gray"></span>
             <label for="validationDefault01" class="form-label txt-gray">Contraseña: <span class="txt-red">*</span></label>
             <input type="pass" name="pass" value="{{$pwd}}" class="form-control" id="validationDefault01" readonly required />
+       
         </div>
 
-
-      <div>
-
-            
-
          <!--  prueba para enlaces  jalar dato -->
-
-
-
+         
           <div class="col-md-3">
             <span class="glyphicon glyphicon-tasks txt-gray"></span>
             <label for="validationDefault01" class="txt-gray"><b>Selecciona un rol: <span class="txt-red">*</span></b></label>
             <select name="rol" class="form-control col-md-8" id="v01" onchange="Mostrar();">
                 @if( $datos->rol == null )
-                <option value="">Sin argumento</option>
-                @foreach($datos2 as $ob2)
-                <option value="{{$ob2->idrol}}">{{$ob2->rol}}</option>                   
-                @endforeach
+                  <option value="">Sin argumento</option>
+                  @foreach($datos2 as $ob2)
+                    <option value="{{$ob2->idrol}}">{{$ob2->rol}}</option>                   
+                  @endforeach
                 @endif
             </select>
-        </div>
 
-        
+            </div>
 
+    
          <div class="col-md-3 oculto" id="boxUno">
             <span class="glyphicon glyphicon-user txt-gray" ></span>
             <label for="validationDefault01" class="txt-gray" ><b>Selecciona al delegado administrativo :</b></label>
@@ -305,62 +299,13 @@
                 @endforeach
                 
             </select>
-        </div>     
+         </div>     
 
 
         </div> 
 
        
   
-
-       <!--    <div class="col-md-3">
-            <span class="glyphicon glyphicon-user txt-gray"></span>
-            <label for="validationDefault01" class="txt-gray"><b>Selecciona al delegado administrativo :</b></label>
-            <select name="DAdm" class="form-control col-md-8" id="validationDefault01" required>
-                
-                <option value="">Sin delegado asignado </option>
-                @foreach($DAdm as $ob2)
-                <option value="{{$ob2->iduniadmin}}">{{$ob2->nombre1}} {{$ob2->apellidopat}}</option>
-                @endforeach
-                
-            </select>
-        </div>     
-
-
-        </div> 
-
-
-        -->
-    
-
-        <script>
-
-        function Mostrar()
-        {
-        
-        var combo = document.getElementById("v01");
-        var selected = combo.options[combo.selectedIndex].text;              
-          if ((combo.options[combo.selectedIndex].text =='Enlace') || (combo.options[combo.selectedIndex].text =='Administrador') ){
-               document.getElementById('boxUno').classList.toggle('oculto');
-               
-               
-            }
-         if (combo.options[combo.selectedIndex].text =='Usuario'){
-               document.getElementById('boxUno').classList.toggle('oculto');
-               
-               
-            }
-          
-
-        }
-       
-         </script>    
-
-
-
-
-
-
 
 
 
@@ -377,28 +322,6 @@
     </form>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -459,21 +382,6 @@
     </form>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

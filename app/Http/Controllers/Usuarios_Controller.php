@@ -162,7 +162,7 @@ class Usuarios_Controller extends Controller{
                                         where estado = 'ACTIVO' and cveua like '2%' and cveua_padre not like '0%'
                                         order by cverepua asc");*/
 
-            $comb = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            $comb = "abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNPRSTUVWXYZ23456789";
             $shfl = str_shuffle($comb);
             $pwd = substr($shfl,0,9);
             $DAdm=\DB::select("select * from R_CC_CREDENCIALES Where iduniadmin is NOT NULL");
@@ -200,18 +200,30 @@ class Usuarios_Controller extends Controller{
             if( $request->personalua != 0 ){
                 
 
-                $resultado=\DB::insert("insert into c_credenciales
-                                       values(sec_credenciales.nextval,'$request->email','$pass',".$request->personalua.",".$request->idpersona.",".$request->ua.",".$request->rol.",CURRENT_TIMESTAMP,null,null)");
+              //  $resultado=\DB::insert("insert into c_credenciales
+                        //              values(sec_credenciales.nextval,'$request->email','$pass',".$request->personalua.",".$request->idpersona.",".$request->ua.",".$request->rol.",CURRENT_TIMESTAMP,null,null)");
                
-               
-    
-               
+                                      echo("insert into c_credenciales
+                                      //              values(sec_credenciales.nextval,'$request->email','$pass',".$request->personalua.",".$request->idpersona.",".$request->ua.",".$request->rol.",CURRENT_TIMESTAMP,null,null)");
+           
+                           
             // Insertar Credenciales No Servidor Público
             }elseif( $request->personalua == 0 ){
+                if($request->DAdm !=NULL){
+                    $resultado=\DB::insert("insert into c_credenciales
+                                         values(sec_credenciales.nextval,'$request->email','$pass',null,".$request->idpersona.",".$request->DAdm.",".$request->rol.",CURRENT_TIMESTAMP,null,null)");
 
-                $resultado=\DB::insert("insert into c_credenciales
-                                        values(sec_credenciales.nextval,'$request->email','$pass',null,".$request->idpersona.",null,".$request->rol.",CURRENT_TIMESTAMP,null,null)");
-            }    
+                    
+                }else{
+
+                    $resultado=\DB::insert("insert into c_credenciales
+                                      values(sec_credenciales.nextval,'$request->email','$pass',null,".$request->idpersona.",null,".$request->rol.",CURRENT_TIMESTAMP,null,null)");
+                
+                  
+                }
+                   
+                   
+                }    
 
             if( $resultado == 1 ){
                 if( $request->enviar == 2 ){
@@ -219,7 +231,7 @@ class Usuarios_Controller extends Controller{
                     $correo = new CorreoElectronico($request->all());
                     Mail::to($request->email)->send($correo);
                     //return "Mensaje enviado";
-                    return Redirect::to('/usuariosactivos')
+                   return Redirect::to('/usuariosactivos')
                         ->with('info','Correo Enviado.');
                 }
                 return Redirect::to('/usuariosactivos');

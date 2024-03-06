@@ -99,6 +99,8 @@
     </style>
 
     <script crossorigin="anonymous">
+
+        var activado =0;    
         function mostrar() {
             document.getElementById('divocultar').style.display = 'block';
         }
@@ -128,6 +130,8 @@
             document.getElementById("limpiartexto9").value = "";
             document.getElementById("limpiartexto10").value = "";
             document.getElementById("limpiartexto11").value = "";
+            //OBTENEMOS EL ID DEL FORM
+            //FORM.RESET()
         }
 
         function limpiar2() {
@@ -143,13 +147,35 @@
             document.getElementById("limpiartexto2").value = "";
             document.getElementById("limpiartexto3").value = "";
             document.getElementById("limpiartexto4").value = "";
-            document.getElementById("limpiartexto5").value = "";
-            
+            document.getElementById("limpiartexto5").value = "";            
             document.getElementById("limpiartexto7").value = "";
             document.getElementById("limpiartexto8").value = "";
             document.getElementById("limpiartexto9").value = "";
             document.getElementById("limpiartexto10").value = "";
             
+        }
+
+        function Mostrar() //usuario.blade linea 276 si selecciona un usuario/delegado
+        {
+        
+        var combo = document.getElementById("v01");
+        var selected = combo.options[combo.selectedIndex].text;   
+        
+               
+          if (((combo.options[combo.selectedIndex].text =='Usuario') || (combo.options[combo.selectedIndex].text =='Administrador')) && activado == 0  ){
+               document.getElementById('boxUno').classList.toggle('oculto');
+               activado=1;
+               consol.log("activado");
+                              
+            }
+         if ((combo.options[combo.selectedIndex].text =='Enlace'|| (combo.options[combo.selectedIndex].text =='RDSP')) && activado == 1  ){
+               document.getElementById('boxUno').classList.toggle('oculto');
+               activado=0;
+               
+               
+            }
+          
+
         }
 
         function ShowSelected()

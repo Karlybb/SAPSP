@@ -200,11 +200,9 @@ class Usuarios_Controller extends Controller{
             if( $request->personalua != 0 ){
                 
 
-              //  $resultado=\DB::insert("insert into c_credenciales
-                        //              values(sec_credenciales.nextval,'$request->email','$pass',".$request->personalua.",".$request->idpersona.",".$request->ua.",".$request->rol.",CURRENT_TIMESTAMP,null,null)");
+               $resultado=\DB::insert("insert into c_credenciales
+                                      values(sec_credenciales.nextval,'$request->email','$pass',".$request->personalua.",".$request->idpersona.",".$request->ua.",".$request->rol.",CURRENT_TIMESTAMP,null,null)");
                
-                                      echo("insert into c_credenciales
-                                      //              values(sec_credenciales.nextval,'$request->email','$pass',".$request->personalua.",".$request->idpersona.",".$request->ua.",".$request->rol.",CURRENT_TIMESTAMP,null,null)");
            
                            
             // Insertar Credenciales No Servidor Público

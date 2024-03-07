@@ -138,7 +138,7 @@ form i {
     
     <form action="{{route('login')}}" method="post" autocomplete="off">
       
-     <input type='hidden' name=´_token value='{{csrf_token()}}'>
+    @csrf
       
 
       <div class="col-md-2 center">

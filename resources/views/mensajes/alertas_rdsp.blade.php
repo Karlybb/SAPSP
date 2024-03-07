@@ -21,7 +21,7 @@
                     <br>
                     <div class="d-flex justify-content-center">
                         <form action="validacedulardsp" method="post">
-
+                            @csrf
                             <input type="hidden" value="{{$idreq}}" name="idreq" class="form-control" id="validationDefault01" />
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                             <button class="btn btn-success m-2" type="submit">VALIDAR</button>

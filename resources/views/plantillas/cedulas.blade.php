@@ -423,11 +423,10 @@
                 <div class="col-md-12 mb-3">
                 <span class="glyphicon glyphicon-tasks txt-gray"></span>
                 <label for="sel1" class="txt-gray">Motivo del cambio:</label>
-                <select name="radio" class="form-control" id="sel1" onchange="ShowSelected();">   
-                    <optgroup label="Motivos:">
-                     <option value="" ><b>Selecciona el Motivo del Cambio.</b></option> 
-                     <option value="CORRECCIÓN">CORRECCIÓN</option>
-                        <option value="ACTUALIZACIÓN">ACTUALIZACIÓN</option>
+                <select  title="Hace referencia a la razon por la cual el registro del funcionario sera alterado" name="radio" class="form-control" id="sel1" onchange="ShowSelected();">   
+                    <optgroup   label="Motivos:">                   
+                        <option  title="Existe uno o varios cambios a efectuar dentro de la información del servidor" value="CORRECCIÓN">CORRECCIÓN</option>
+                        <option title="Todos los datos  personales del servidor seran actualizados a los del nuevo funcionario" value="ACTUALIZACIÓN">ACTUALIZACIÓN</option>
                      </optgroup>
                 </select>
                 </div>
